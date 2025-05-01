@@ -9,15 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.1"
+    "@clerk/nextjs": "^6.18.0",
+    "axios": "^1.9.0",
+    "framer-motion": "^12.9.2",
+    "mongoose": "^8.14.0",
+    "next": "^15.3.1",
+    "prismjs": "^1.30.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hot-toast": "^2.5.2",
+    "react-markdown": "^10.1.0",
+    "svix": "^1.64.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4"
   }
 }
