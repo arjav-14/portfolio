@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export const Header = () => {
+export const Header = ({ onAboutClick, onProjectsClick, onSkillsClick, onContactClick }) => {
   return (
     <div className="bg-white">
       <header className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
@@ -32,10 +32,18 @@ export const Header = () => {
           </div>
 
           <div className="hidden md:flex md:items-center md:gap-8">
-            <a href="/about" className="text-sm font-medium text-gray-700 hover:text-gray-900">About</a>
-            <a href="/projects" className="text-sm font-medium text-gray-700 hover:text-gray-900">Projects</a>
-            <a href="/skills" className="text-sm font-medium text-gray-700 hover:text-gray-900">Skills</a>
-            <a href="/contact" className="text-sm font-medium text-gray-700 hover:text-gray-900">Contact</a>
+            <button onClick={onAboutClick} className="text-sm font-medium text-gray-700 hover:text-gray-900">
+              About
+            </button>
+            <button onClick={onProjectsClick} className="text-sm font-medium text-gray-700 hover:text-gray-900">
+              Projects
+            </button>
+            <button onClick={onSkillsClick} className="text-sm font-medium text-gray-700 hover:text-gray-900">
+              Skills
+            </button>
+            <button onClick={onContactClick} className="text-sm font-medium text-gray-700 hover:text-gray-900">
+              Contact
+            </button>
             <a href="/resume" className="text-sm font-medium px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-700 transition-colors">
               Resume
             </a>

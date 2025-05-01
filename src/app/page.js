@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRef } from 'react';
 import arjavImage from "./assets/arjav.jpg";
 import { Header } from "../components/header";
 import About from "@/components/About";
@@ -9,6 +10,17 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 
 export default function Home() {
+  // Create refs for each section
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  // Scroll handler function
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -38,7 +50,13 @@ export default function Home() {
         }
       `}</style>
 
-      <Header />
+      <Header 
+        onAboutClick={() => scrollToSection(aboutRef)}
+        onProjectsClick={() => scrollToSection(projectsRef)}
+        onSkillsClick={() => scrollToSection(skillsRef)}
+        onContactClick={() => scrollToSection(contactRef)}
+      />
+      
       <motion.div 
         className="flex flex-col items-center justify-start pt-20 min-h-screen bg-white text-black"
         variants={staggerContainer}
@@ -88,6 +106,8 @@ export default function Home() {
         
         {/* Sections with scroll animations */}
         <motion.div 
+          ref={aboutRef}
+          id="about"
           className="mt-20 w-full"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -98,6 +118,8 @@ export default function Home() {
         </motion.div>
 
         <motion.div 
+          ref={projectsRef}
+          id="projects"
           className="mt-20 w-full"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -108,6 +130,8 @@ export default function Home() {
         </motion.div>
 
         <motion.div 
+          ref={skillsRef}
+          id="skills"
           className="mt-20 w-full"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -118,6 +142,8 @@ export default function Home() {
         </motion.div>
 
         <motion.div 
+          ref={contactRef}
+          id="contact"
           className="mt-20 w-full"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
