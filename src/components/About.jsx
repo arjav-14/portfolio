@@ -15,6 +15,17 @@ const About = () => {
               <p className='text-sm'>Computer Science & Engineering</p>
               <p className='text-sm text-gray-500'>2023 -2027</p>
             </li>
+            <p className='font-medium'>Jes College</p>
+              <p className='text-sm'>Science</p>
+              <p className='text-sm text-gray-500'>83.83%</p>
+            <li>
+            </li>
+            <p className='font-medium'> Rishi vidya educational school</p>
+              
+              <p className='text-sm text-gray-500'>90.686%</p>
+            <li>
+
+            </li>
           </ul>
         </div>
 
